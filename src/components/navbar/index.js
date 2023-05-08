@@ -4,7 +4,7 @@ import "./index.css";
 
 const Navbar = () => {
   return (
-    <div class="flex items-center h-16 fixed w-screen z-50">
+    <div class="flex items-center h-16 fixed w-screen z-50 bg-black">
       <img
         src={require("../../assets/logo.png")}
         alt="logo"

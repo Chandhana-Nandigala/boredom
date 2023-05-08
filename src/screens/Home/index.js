@@ -1,16 +1,19 @@
 import React from "react";
 import Navbar from "../../components/navbar";
 import Banner from "../../components/banner";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Products from "../../components/products";
 import About from "../../components/about";
-import { getAllProducts } from "../../redux/features/products";
+import { fetchAsyncProducts } from "../../redux/features/products";
+
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 
 const Home = () => {
-  const products = useSelector(getAllProducts);
-  console.log(products);
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+    dispatch(fetchAsyncProducts());
+  }, [dispatch]);
   const particlesInit = async (main) => {
     console.log(main);
     await loadFull(main);
@@ -76,7 +79,7 @@ const Home = () => {
         <Navbar />
       </>
       <Banner />
-      <Products products={products} />
+      <Products />
       <About />
     </div>
   );
