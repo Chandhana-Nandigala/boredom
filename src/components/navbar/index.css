@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  z-index: 10;
+  position: fixed;
+  @apply text-white w-full flex items-center justify-evenly;
+}

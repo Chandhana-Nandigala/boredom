@@ -1,0 +1,8 @@
+.btnBox {
+  background-color: rgba(179, 255, 229, 0.2);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  @apply w-2/12 h-0.5 space-y-4;
+}
