@@ -3,6 +3,7 @@ import { Link } from "react-scroll";
 import "./index.css";
 
 const Navbar = () => {
+  const [accToggle, setAccToggle] = React.useState(false);
   return (
     <div class="flex items-center h-16 fixed w-screen z-50 bg-black">
       <img
@@ -28,9 +29,17 @@ const Navbar = () => {
           />
         </ul>
         <div class=" items-center justify-between space-x-4">
-          <button type="button">Account</button>
+          <button type="button" onClick={() => setAccToggle(!accToggle)}>
+            Account
+          </button>
           <button type="button">Cart</button>
         </div>
+      </div>
+      <div
+        class="w-36 h-9 bg-white absolute right-24 mt-20 rounded-sm text-black "
+        style={{ visibility: accToggle ? "visible" : "hidden" }}
+      >
+        im a tooltip
       </div>
     </div>
   );
